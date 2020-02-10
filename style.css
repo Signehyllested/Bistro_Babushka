@@ -1,0 +1,124 @@
+/*--- Genrelle indstillinger---*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {}
+
+p {}
+
+/*--- Genrelle indstillinger SLUT ---*/
+
+/*--- fælles designregler for alle sektioner ---*/
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*--- Slut ---*/
+
+/*---Header - burgermenu---*/
+
+.hidden {
+    display: none;
+    /*    transform: scale(0);*/
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#menuknap {
+    display: inline-block;
+    color: red;
+    margin: 0.6rem;
+}
+
+#menu {
+    list-style-type: none;
+    transition: transform .3s;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    color: white;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header nav a {
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+header nav a:hover {
+    color: black;
+}
+
+header li {
+    text-align: center;
+}
+
+/*---Header - burgermenu SLUT---*/
+
+
+/*---css grid og indhold---*/
+
+article {
+    border: 1px solid black;
+    margin: 2vw;
+    padding: 1vw;
+}
+
+
+.data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 5px;
+    margin: 10px;
+}
+
+/*--- Media QUeries ---*/
+
+@media only screen and (min-width: 600px) {
+
+    #menu {
+        text-align: center;
+    }
+
+    #menuknap {
+        display: none;
+    }
+
+    .hidden {
+        transform: translateX(0);
+        opacity: 1;
+        display: inline-block;
+    }
+
+    header li {
+        display: inline-block;
+        padding-right: 1rem;
+    }
+
+    header nav {
+        padding: 1rem;
+    }
+}
