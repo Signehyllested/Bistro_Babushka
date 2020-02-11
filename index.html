@@ -11,7 +11,21 @@
 
 <body>
     <header>
+
         <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imgs/logo.svg">
+                </a>
+            </div>
+            <div class="ikoner">
+                <a href="www.facebook.com">
+                    <img class="soMe" src="imgs/fb.svg" alt="facebook ikon">
+                </a>
+                <a href="www.instagram.com">
+                    <img class="soMe" src="imgs/ig.svg" alt="instagram ikon">
+                </a>
+            </div>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
                 <li><a href="index.html">HJEM</a></li>
@@ -25,7 +39,6 @@
 
     <section id="splash">
         <div id="logo"></div>
-        <div id="font"></div>
     </section>
 
     <nav id="filter_menu">
@@ -97,7 +110,7 @@
 
                     klon.querySelector("#navn").textContent = mad.gsx$navn.$t;
                     klon.querySelector("#p1").textContent = mad.gsx$kort.$t;
-                    klon.querySelector("#pris").textContent = mad.gsx$pris.$t;
+                    klon.querySelector("#pris").textContent = mad.gsx$pris.$t + ",-";
 
                     listevisning.appendChild(klon);
                 }

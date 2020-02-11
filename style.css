@@ -33,6 +33,22 @@ section {
 
 /*---Header - burgermenu---*/
 
+.logo {
+    display: block;
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    margin: 0;
+    height: 3vh;
+    width: 3vw;
+}
+}
+
+.ikoner {
+    display: none;
+}
+
+
 .hidden {
     display: none;
     /*    transform: scale(0);*/
@@ -91,6 +107,12 @@ header li {
     background-image: url(imgs/splash.jpg);
     background-position: 67% 10%;
     max-width: none;
+
+    /* scrolling effekt */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #logo {
@@ -142,6 +164,32 @@ article {
     margin: 2vw;
 }
 
+#alleMenu {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#alleMenu img {
+    /*
+    width: 400px;
+    height: 267px;
+    object-fit: contain;
+*/
+    z-index: 1;
+    width: 100%;
+    transition: all 0.5s;
+
+}
+
+#alleMenu img:hover {
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.5;
+    filter: brightness(1);
+
+}
+
 #navn,
 #p1 {
     padding: 0 1vw;
@@ -151,6 +199,7 @@ article {
     font-size: 2rem;
     padding-left: 1vw;
     margin: 0;
+    color: red;
 }
 
 
@@ -189,5 +238,18 @@ article {
         padding: 1rem;
         display: flex;
         justify-content: space-between;
+    }
+
+    .ikoner {
+        display: block;
+        position: absolute;
+        top: 1.5vw;
+        right: 0vw;
+        margin: 0;
+    }
+
+    .soMe {
+        height: 4vh;
+        width: 4vw;
     }
 }
