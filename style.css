@@ -6,13 +6,16 @@
 
 body {
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 img {
     width: 100%;
 }
 
-h1 {}
+h1 {
+    text-align: center;
+}
 
 p {}
 
@@ -24,6 +27,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 /*--- Slut ---*/
 
@@ -51,6 +55,7 @@ section {
 header {
     width: 100%;
     color: white;
+
 }
 
 header nav {
@@ -61,10 +66,10 @@ header nav {
 }
 
 header nav a {
-    font-weight: bold;
+
     color: red;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -78,13 +83,74 @@ header li {
 
 /*---Header - burgermenu SLUT---*/
 
+/*--- Splash ---*/
+#splash {
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-image: url(imgs/splash.jpg);
+    background-position: 67% 10%;
+    max-width: none;
+}
+
+#logo {
+    background-image: url(imgs/logo_1.svg);
+    width: 500px;
+    height: 417px;
+    background-size: cover;
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+
+}
+
+/*---Filter - Buttons---*/
+
+nav {
+    text-align: center;
+}
+
+#filter_menu {
+    margin: 1em;
+}
+
+
+
+button {
+    background-color: #e63737;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.valgt {
+    opacity: 1;
+}
+
 
 /*---css grid og indhold---*/
 
 article {
     border: 1px solid black;
     margin: 2vw;
-    padding: 1vw;
+}
+
+#navn,
+#p1 {
+    padding: 0 1vw;
+}
+
+#pris {
+    font-size: 2rem;
+    padding-left: 1vw;
+    margin: 0;
 }
 
 
@@ -101,6 +167,7 @@ article {
 
     #menu {
         text-align: center;
+
     }
 
     #menuknap {
@@ -115,10 +182,12 @@ article {
 
     header li {
         display: inline-block;
-        padding-right: 1rem;
+        padding-right: 3rem;
     }
 
     header nav {
         padding: 1rem;
+        display: flex;
+        justify-content: space-between;
     }
 }

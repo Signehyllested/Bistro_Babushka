@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resturant Bistro Babushka</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,27 +23,33 @@
         </nav>
     </header>
 
-    <section id="splash"></section>
-    <button class="filter valgt" data-kategori="alle">Alle</button>
-    <button class="filter " data-kategori="forretter">Foretter</button>
-    <button class="filter " data-kategori="hovedretter">Hovedretter</button>
-    <button class="filter " data-kategori="desserter">Desserter</button>
-    <button class="filter " data-kategori="sideorders">Tilbehør</button>
-    <button class="filter " data-kategori="drikkevarer">Drikkevarer</button>
-    <nav id="filter_menu">
+    <section id="splash">
+        <div id="logo"></div>
+        <div id="font"></div>
+    </section>
 
+    <nav id="filter_menu">
+        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter " data-kategori="forretter">Foretter</button>
+        <button class="filter " data-kategori="hovedretter">Hovedretter</button>
+        <button class="filter " data-kategori="desserter">Desserter</button>
+        <button class="filter " data-kategori="sideorders">Tilbehør</button>
+        <button class="filter " data-kategori="drikkevarer">Drikkevarer</button>
     </nav>
     <h1>Alle</h1>
 
-    <section class="data-container"></section>
-    <template>
-        <article id="alleMenu">
-            <img src="" alt="">
-            <h3 id="navn"></h3>
-            <p id="p1"></p>
-            <h4 id="pris"></h4>
-        </article>
-    </template>
+
+    <section id="menu_view">
+        <section class="data-container"></section>
+        <template>
+            <article id="alleMenu">
+                <img src="" alt="">
+                <h3 id="navn"></h3>
+                <p id="p1"></p>
+                <h4 id="pris"></h4>
+            </article>
+        </template>
+    </section>
 
 
 
@@ -86,8 +93,7 @@
                     let klon = template.cloneNode(true).content;
 
                     klon.querySelector("img").src = "imgs/small/" + mad.gsx$billede.$t + "-sm.jpg";
-                    klon.querySelector("img").alt = "billede af"
-                    mad.gsx$navn.$t;
+                    klon.querySelector("img").alt = "billede af" + mad.gsx$navn.$t;
 
                     klon.querySelector("#navn").textContent = mad.gsx$navn.$t;
                     klon.querySelector("#p1").textContent = mad.gsx$kort.$t;
