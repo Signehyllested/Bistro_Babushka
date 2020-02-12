@@ -247,6 +247,25 @@ article {
     display: none;
 }
 
+
+/*--- Footer---*/
+
+footer {
+    text-align: center;
+    border-top: 0.2rem solid red;
+}
+
+#oplysninger {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+}
+
+#oplysninger p {
+    margin: 0 0 10px 0;
+}
+
+
 /*--- Media QUeries ---*/
 
 @media only screen and (min-width: 600px) {
