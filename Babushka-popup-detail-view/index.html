@@ -64,6 +64,15 @@
         </template>
     </section>
 
+    <section id="detalje" class="skjul">
+        <button id="luk">X</button>
+        <article id="detalje_view">
+            <img src="" alt="">
+            <h1 id="navn"></h1>
+            <p id="p2"></p>
+            <p id="oprindelse">Oprindelse: </p>
+        </article>
+    </section>
 
 
     <script>
@@ -72,6 +81,8 @@
         let menu = [];
 
         let filter = "alle";
+
+        let detalje = document.querySelector("#detalje");
 
         document.addEventListener("DOMContentLoaded", start)
 
@@ -112,9 +123,27 @@
                     klon.querySelector("#p1").textContent = mad.gsx$kort.$t;
                     klon.querySelector("#pris").textContent = mad.gsx$pris.$t + ",-";
 
+                    klon.querySelector("#alleMenu").addEventListener("click", () => visDetalje(mad));
+
                     listevisning.appendChild(klon);
                 }
             })
+        }
+
+        function visDetalje(mad) {
+
+
+            detalje.classList.remove("skjul");
+            detalje.querySelector("button").addEventListener("click", () => detalje.classList.add("skjul"));
+
+            detalje.querySelector("img").src = "imgs/large/" + mad.gsx$billede.$t + ".jpg";
+            detalje.querySelector("img").alt = "billede af" + mad.gsx$navn.$t;
+
+            detalje.querySelector("#navn").textContent = mad.gsx$navn.$t;
+            detalje.querySelector("#p2").textContent = mad.gsx$lang.$t;
+            detalje.querySelector("#oprindelse").textContent = +mad.gsx$oprindelse.$t;
+
+
         }
 
         function buttons() {
