@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant Bistro Babushka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+
+    <section id="detalje" class="skjul">
+        <button id="luk">X</button>
+        <article id="detalje_view">
+            <img src="" alt="">
+            <h1 id="navn"></h1>
+            <p id="p2"></p>
+            <p id="oprindelse">Oprindelse: </p>
+        </article>
+    </section>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const endpoint = "https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json";
+
+        let menu = [];
+
+        const detalje = document.querySelector("#detalje");
+
+        document.addEventListener("DOMContentLoaded", start)
+
+        function start() {
+            loadData();
+        }
+
+        async function loadData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            menu = await response.json();
+            console.log(menu);
+
+            visMenu();
+        }
+
+
+
+        function visMenu() {
+
+            menu.feed.entry.forEach(mad => {
+                if (mad.gsx$id.$t == id) {
+
+                    detalje.classList.remove("skjul");
+
+                    detalje.querySelector("img").src = "imgs/large/" + mad.gsx$billede.$t + ".jpg";
+                    detalje.querySelector("img").alt = "billede af" + mad.gsx$navn.$t;
+
+                    detalje.querySelector("#navn").textContent = mad.gsx$navn.$t;
+                    detalje.querySelector("#p2").textContent = mad.gsx$lang.$t;
+                    detalje.querySelector("#oprindelse").textContent = +mad.gsx$oprindelse.$t;
+
+                }
+            })
+            document.querySelector("#detalje #luk").addEventListener("click", (skjulDetalje));
+        }
+
+        function skjulDetalje() {
+            history.back();
+        }
+
+    </script>
+</body>
+
+</html>
