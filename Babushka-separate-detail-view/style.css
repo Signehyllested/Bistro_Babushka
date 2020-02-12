@@ -1,0 +1,255 @@
+/*--- Genrelle indstillinger---*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {}
+
+/*--- Genrelle indstillinger SLUT ---*/
+
+/*--- fælles designregler for alle sektioner ---*/
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*--- Slut ---*/
+
+/*---Header - burgermenu---*/
+
+.logo {
+    display: block;
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    margin: 0;
+    height: 3vh;
+    width: 3vw;
+}
+}
+
+.ikoner {
+    display: none;
+}
+
+
+.hidden {
+    display: none;
+    /*    transform: scale(0);*/
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#menuknap {
+    display: inline-block;
+    color: red;
+    margin: 0.6rem;
+}
+
+#menu {
+    list-style-type: none;
+    transition: transform .3s;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    color: white;
+
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header nav a {
+
+    color: red;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+header nav a:hover {
+    color: black;
+}
+
+header li {
+    text-align: center;
+}
+
+/*---Header - burgermenu SLUT---*/
+
+/*--- Splash ---*/
+#splash {
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-image: url(imgs/splash.jpg);
+    background-position: 67% 10%;
+    max-width: none;
+
+    /* scrolling effekt */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    background-image: url(imgs/logo_1.svg);
+    width: 500px;
+    height: 417px;
+    background-size: cover;
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+
+}
+
+/*---Filter - Buttons---*/
+
+nav {
+    text-align: center;
+}
+
+#filter_menu {
+    margin: 1em;
+}
+
+
+
+button {
+    background-color: #e63737;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.valgt {
+    opacity: 1;
+}
+
+
+/*---css grid og indhold---*/
+
+article {
+    border: 1px solid black;
+    margin: 2vw;
+}
+
+#alleMenu {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#alleMenu img {
+    /*
+    width: 400px;
+    height: 267px;
+    object-fit: contain;
+*/
+    z-index: 1;
+    width: 100%;
+    transition: all 0.5s;
+
+}
+
+#alleMenu img:hover {
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.5;
+    filter: brightness(1);
+
+}
+
+#navn,
+#p1 {
+    padding: 0 1vw;
+}
+
+#pris {
+    font-size: 2rem;
+    padding-left: 1vw;
+    margin: 0;
+    color: red;
+}
+
+
+.data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 5px;
+    margin: 10px;
+}
+
+/*--- Media QUeries ---*/
+
+@media only screen and (min-width: 600px) {
+
+    #menu {
+        text-align: center;
+
+    }
+
+    #menuknap {
+        display: none;
+    }
+
+    .hidden {
+        transform: translateX(0);
+        opacity: 1;
+        display: inline-block;
+    }
+
+    header li {
+        display: inline-block;
+        padding-right: 3rem;
+    }
+
+    header nav {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ikoner {
+        display: block;
+        position: absolute;
+        top: 1.5vw;
+        right: 0vw;
+        margin: 0;
+    }
+
+    .soMe {
+        height: 4vh;
+        width: 4vw;
+    }
+}
