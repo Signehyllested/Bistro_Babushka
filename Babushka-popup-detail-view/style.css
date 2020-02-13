@@ -231,7 +231,7 @@ article {
     background-color: white;
     margin: 2em 5em;
     width: 50%;
-    left: 15vw;
+    left: 17vw;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -265,7 +265,7 @@ article {
 
 #p2,
 #oprindelse {
-    padding-left: 1em;
+    padding: 0 4em;
 }
 
 /*--- Footer---*/

@@ -232,7 +232,7 @@ article {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    left: 15vw;
+    left: 17vw;
 }
 
 #detalje_view img {
@@ -265,7 +265,7 @@ article {
 
 #p2,
 #oprindelse {
-    padding-left: 1em;
+    padding: 0 4em;
 }
 
 
