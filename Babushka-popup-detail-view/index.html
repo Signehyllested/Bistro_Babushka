@@ -41,9 +41,9 @@
             <ul id="menu" class="hidden">
                 <li><a href="index.html">HJEM</a></li>
                 <li> <a href="">RESERVATIONER</a></li>
-                <li> <a href="">MENU</a></li>
+                <li> <a href="#filter_menu">MENU</a></li>
                 <li> <a href="">BESTIL ONLINE</a></li>
-                <li> <a href="">KONTAKT</a></li>
+                <li> <a href="#oplysninger">KONTAKT</a></li>
             </ul>
         </nav>
     </header>
@@ -76,14 +76,26 @@
     </section>
 
     <section id="detalje" class="skjul">
-        <button id="luk">X</button>
+
         <article id="detalje_view">
+            <button id="luk">X</button>
             <img src="" alt="">
             <h1 id="navn"></h1>
             <p id="p2"></p>
-            <p id="oprindelse">Oprindelse: </p>
+            <p id="oprindelse">Oprindelse: <span></span></p>
         </article>
     </section>
+
+    <footer>
+        <div id="oplysninger">
+            <div class="indhold">
+                <p>Grønnegade 97<br>1234 København K.<br>Tlf: +45 12 34 56 78</p>
+            </div>
+            <div class="indhold">
+                <p>Mandag - Fredag: 10.30 til 22.00<br>Lørdag: 12.00 til 23.00<br>Søndag: Lukket</p>
+            </div>
+        </div>
+    </footer>
 
 
     <script>
@@ -152,7 +164,8 @@
 
             detalje.querySelector("#navn").textContent = mad.gsx$navn.$t;
             detalje.querySelector("#p2").textContent = mad.gsx$lang.$t;
-            detalje.querySelector("#oprindelse").textContent = +mad.gsx$oprindelse.$t;
+
+            detalje.querySelector("#oprindelse span").textContent = mad.gsx$oprindelse.$t;
 
 
         }
@@ -194,8 +207,5 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

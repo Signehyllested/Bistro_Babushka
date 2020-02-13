@@ -24,7 +24,6 @@ p {}
 /*--- fælles designregler for alle sektioner ---*/
 
 section {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -138,7 +137,7 @@ nav {
 
 
 
-button {
+.filter {
     background-color: #e63737;
     border: none;
     color: white;
@@ -160,9 +159,14 @@ button {
 /*---css grid og indhold---*/
 
 article {
-    border: 1px solid black;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     margin: 2vw;
 }
+
+#menu_view {
+    max-width: 1200px;
+}
+
 
 #alleMenu {
     cursor: pointer;
@@ -211,21 +215,23 @@ article {
 }
 
 /*--- popup - deatails ---*/
+
+
 #detalje {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .4);
     overflow: scroll;
-
 }
 
 #detalje_view {
     background-color: white;
     margin: 2em 5em;
-
+    width: 50%;
+    left: 15vw;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -236,16 +242,51 @@ article {
     width: 100%;
 }
 
-
-
 #luk {
     margin: 1em;
-    opacity: 1;
+    color: red;
+    background-color: none;
+    border: none;
+    text-decoration: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+
 }
 
 .skjul {
     display: none;
 }
+
+#navn {
+    color: red;
+    font-size: 2em;
+}
+
+#p2,
+#oprindelse {
+    padding-left: 1em;
+}
+
+/*--- Footer---*/
+
+footer {
+    text-align: center;
+    border-top: 0.2rem solid red;
+    font-size: 1.2em;
+}
+
+#oplysninger {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+}
+
+#oplysninger p {
+    margin: 0 0 10px 0;
+}
+
+
 
 /*--- Media QUeries ---*/
 

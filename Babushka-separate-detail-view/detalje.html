@@ -29,10 +29,9 @@
             <img src="" alt="">
             <h1 id="navn"></h1>
             <p id="p2"></p>
-            <p id="oprindelse">Oprindelse: </p>
+            <p id="oprindelse">Oprindelse: <span></span></p>
         </article>
     </section>
-
 
 
     <script>
@@ -74,7 +73,7 @@
 
                     detalje.querySelector("#navn").textContent = mad.gsx$navn.$t;
                     detalje.querySelector("#p2").textContent = mad.gsx$lang.$t;
-                    detalje.querySelector("#oprindelse").textContent = +mad.gsx$oprindelse.$t;
+                    detalje.querySelector("#oprindelse span").textContent = mad.gsx$oprindelse.$t;
 
                 }
             })

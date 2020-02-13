@@ -24,10 +24,9 @@ p {}
 /*--- fælles designregler for alle sektioner ---*/
 
 section {
-    max-width: 1200px;
+
     margin: 0 auto;
 }
-
 
 /*--- Slut ---*/
 
@@ -138,7 +137,7 @@ nav {
 
 
 
-button {
+.filter {
     background-color: #e63737;
     border: none;
     color: white;
@@ -160,8 +159,13 @@ button {
 /*---css grid og indhold---*/
 
 article {
-    border: 1px solid black;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     margin: 2vw;
+
+}
+
+#menu_view {
+    max-width: 1200px;
 }
 
 #alleMenu {
@@ -217,7 +221,6 @@ article {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
     overflow: scroll;
 
 }
@@ -225,11 +228,11 @@ article {
 #detalje_view {
     background-color: white;
     margin: 2em 5em;
-
+    width: 50%;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-
+    left: 15vw;
 }
 
 #detalje_view img {
@@ -237,14 +240,32 @@ article {
 }
 
 
-
 #luk {
-    margin: 1em;
-    opacity: 1;
+    background-color: #e63737;
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 4px;
 }
+
 
 .skjul {
     display: none;
+}
+
+#navn {
+    color: red;
+    font-size: 2em;
+}
+
+#p2,
+#oprindelse {
+    padding-left: 1em;
 }
 
 
@@ -253,6 +274,7 @@ article {
 footer {
     text-align: center;
     border-top: 0.2rem solid red;
+    font-size: 1.2em;
 }
 
 #oplysninger {
